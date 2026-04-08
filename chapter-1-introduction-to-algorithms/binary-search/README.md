@@ -1,59 +1,57 @@
 /\*
-Binary search is an algorithm whose motto is: divide and conquer;
+A busca binária é um algoritmo cujo lema é: dividir para conquistar;
 
-So it works like this: we have an ordered list with 100 numbers;
+Funciona assim: temos uma lista ordenada com 100 números;
 
-You guess a number, always in the middle. Let's suppose Mike is
-thinking of a number. If your guess is greater or less than Mike's
-number, he says 'greater' or 'less';
+Você tenta adivinhar um número, sempre no meio. Suponhamos que Mike esteja
+pensando em um número. Se o seu palpite for maior ou menor que o número de Mike,
+ele diz 'maior' ou 'menor';
 
-Remember: divide and conquer, so we start with 50:
+Lembre-se: dividir para conquistar, então começamos com 50:
 
--- Mike: is greater;
+-- Mike: é maior;
 
-So we know that 50 is GREATER than the number he is thinking
-of, because we already know that all the numbers from 50 to 100
-are even greater. Therefore, we can DISCARD these numbers, REDUCING
-the size of the list until we guess the number Mike is thinking of;
+Então sabemos que 50 é MAIOR que o número que ele está pensando,
+porque já sabemos que todos os números de 50 a 100
+são ainda maiores. Portanto, podemos DESCARTAR esses números, REDUZINDO
+o tamanho da lista até adivinharmos o número que Mike está pensando;
 
-Great! Now let's move on to the next guess.We
-have between 1 and 49, we'll guess 25:
+Ótimo! Agora vamos para o próximo palpite.
+Temos entre 1 e 49, vamos chutar 25:
 
--- Mike: It's smaller;
+-- Mike: É menor;
 
-So we know that 25 is SMALLER than the number he's thinking of, so
-we can DISCARD all the numbers between 1 and 25 because they are even SMALLER;
+Sabemos que 25 é MENOR que o número que ele está pensando, então
+podemos DESCARTAR todos os números entre 1 e 25 porque eles são ainda MENORES;
 
-Now we have between 26 and 49, we'll guess 37:
+Agora temos entre 26 e 49, vamos chutar 37:
 
--- Mike: It's larger;
+-- Mike: É maior;
 
-Now we know that between 26 and 49, 37 is larger, so all the numbers after
-37 will be even larger, so we discard 37 and its consecutive numbers,
+Agora sabemos que entre 26 e 49, 37 é maior, então todos os números depois de
+37 serão ainda maiores, então descartamos 37 e seus números consecutivos,
 
-Okay, we're close! Now we have between 26 and 37, the middle number
-between 26 and 37 is 31, we'll guess 31:
+Ok, estamos perto! Agora temos entre 26 e 37, o número do meio
+entre 26 e 37 é 31, vamos chutar 31:
 
--- Mike: It's smaller;
+-- Mike: É menor;
 
-Oh no! Okay, okay, now we know that 31 is smaller than the
-number he's thinking of, so all the numbers before 31 will also
-be smaller, so we discard the numbers smaller than 31;
+Ah, não! Ok, ok, agora sabemos que 31 é menor que o
+número que ele está pensando, então todos os números antes de 31 também serão
+menores, então descartamos os números menores que 31;
 
-Now we have between 32 and 37, the intermediate number is 34, we'll guess 34:
+Agora temos entre 32 e 37, o número intermediário é 34, vamos chutar 34:
 
--- Mike: 34 is larger than the number I'm thinking of;
+-- Mike: 34 é maior que o número que estou pensando;
 
-Okay, if 34 is larger than the number he's thinking of, and we
-have from 34 to 37, we can discard them and only keep 32 and 33, we'll guess 32;
+Ok, se 34 é maior que o número que ele está pensando, e nós
+temos de 34 a 37, podemos descartá-los e ficar apenas com 32 e 33, vamos chutar 32;
 
--- Mike: You got it right!!!
+-- Mike: Você acertou!!!
 
-Now let's review: from a list of 100 numbers, if we had used a simple search, in
-the worst-case scenario we would have had to try 100 times. Now, with binary
-search, we went from: 100 -> 50 -> 37 -> 31 -> 34 -> !!32!!, see, only 6 attempts.
+Agora vamos revisar: de uma lista de 100 números, se tivéssemos usado uma busca simples, no
+pior cenário teríamos que tentar 100 vezes. Agora, com a busca binária, passamos de: 100 -> 50 -> 37 -> 31 -> 34 -> !!32!!, veja, apenas 6 tentativas.
 
-In the worst-case scenario with binary search, we had to ask 6 times; in the worst-case
-scenario with simple search, we would have had to ask 100 times.
+No pior cenário com a busca binária, tivemos que perguntar 6 vezes; No pior cenário possível, com uma busca simples, teríamos que perguntar 100 vezes.
 
 \*/
